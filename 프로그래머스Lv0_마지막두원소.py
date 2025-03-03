@@ -6,5 +6,5 @@
 def solution(num_list):
     end = num_list[-1]
     diff = end - num_list[-2]
-    num_list.append(diff) if diff > 0 else num_list.append(end*2)
+    num_list.append(diff if diff > 0 else end*2)
     return num_list
