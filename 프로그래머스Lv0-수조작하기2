@@ -1,0 +1,11 @@
+# 람다를 사용하고 Y - X 리스트생성
+# 키와 같으면 해당 value로 매핑.
+
+def solution(numLog):
+    num_str = {1:'w', -1:'s', 10:'d', -10:'a'}
+    strLog = ''
+    
+    diff = list(map(lambda x,y: y-x, numLog[:-1], numLog[1:]))
+    strLog = ''.join([num_str[n] for n in diff])
+    
+    return strLog
