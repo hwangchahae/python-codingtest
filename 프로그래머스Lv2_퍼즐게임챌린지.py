@@ -10,20 +10,32 @@
 # limit = 전체 제한 시간   limit - 소요시간
 # 당신의 숙련도를 level
 # 제한 시간 내에 성공하는 숙련도의 최솟값(정수)
-def solution(diffs, times, limit):
-    level = 0
-    suc_time = limit + 1
-    while suc_time > limit :
-        suc_time = 0
-        level += 1  
-        for idx, diff in enumerate(diffs): 
+def success(diffs, times, level, limit):
+    suc_time = 0
+    for idx, diff in enumerate(diffs): 
             if level - diff < 0 :  # 난이도가 높을 때 
                 suc_time += ( times[idx] + times[idx-1] ) * (diff - level) + times[idx] 
                 
             else  : # 숙련도가 높거나 같을때
                 suc_time += times[idx]
-            
-            if suc_time > limit : 
-                break
                 
-    return level
+            if suc_time > limit :
+                return False
+    return True
+
+                
+def solution(diffs, times, limit):
+    left = 1
+    right = max(diffs)
+    while left <= right:
+        level = (left + right) // 2         
+
+        if success(diffs, times, level ,limit) :
+            right = level - 1
+
+        else :
+            left = level + 1
+
+
+                
+    return left
