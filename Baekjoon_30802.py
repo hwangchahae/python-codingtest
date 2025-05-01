@@ -9,8 +9,4 @@ for size in sizes:
         t -= 1
     total_sum += t 
 print(total_sum)
-
-if N % P != 0:
-    print(N//P, N % P)
-else :
-    print(N//P)
+print(N//P, N % P)
