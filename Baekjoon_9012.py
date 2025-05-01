@@ -2,17 +2,19 @@ T = int(input())
 
 for _ in range(T):
     result = []
+    answer = ''
     ps = input()
     for s in ps:
         if not result and s == ')':
-            print('NO')
+            answer = 'NO'
             break
         else:
             if s == '(':
                 result.append(s)
             else:
                 result.pop()
-    if len(result) == 0:
+
+    if not result and answer == '':
         print('YES')
     else:
         print('NO')
