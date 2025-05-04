@@ -1,8 +1,10 @@
-N = int(input())
+import sys
+
+N = int(sys.stdin.readline())
 age_name=[]
 
 for _ in range(N):
-    age, name = input().split()
+    age, name = sys.stdin.readline().split()
     age_name.append([int(age), name])
 
     
