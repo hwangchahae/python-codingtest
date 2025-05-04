@@ -10,5 +10,5 @@ for _ in range(N):
     
 dot_list = sorted(dot_list, key= lambda x : (x[0], x[1]))
 
-for _ in range(N):
-    print(dot_list[0], dot_list[1])
+for i in range(N):
+    print(dot_list[i][0], dot_list[i][1])
